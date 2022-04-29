@@ -1,0 +1,58 @@
+First I worked on the front end -client
+run npm init
+then npx create-react-app client 
+this installed packages like , react , react,dom ,react-scprit with cra-template 
+//
+Success! Created client at C:\Users\Hp\Desktop\REDDIT-CLONE-ASSIGN\client
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+//this two creates a new server for me to see my code .
+  cd client
+  npm start
+
+Happy hacking!
+PS C:\Users\Hp\Desktop\REDDIT-CLONE-ASSIGN> npm client
+Unknown command: "client"
+
+To see a list of supported npm commands, run:
+  npm help
+Compiled successfully!
+
+You can now view client in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://192.168.1.69:3000
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+//
+for css , used tailwindcss
+PS C:\Users\Hp\Desktop\REDDIT-CLONE-ASSIGN> cd client
+PS C:\Users\Hp\Desktop\REDDIT-CLONE-ASSIGN\client> npm i tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+
+then npm i craco to add styles 
+edit package.json to add craco 
+to create a config for tailwindcss do:
+the npx tailwindcss init
+
+i had an issue here because my terminal kept saying the webpack version has issues and the version is not the latest 
+also an issue with the tree
+
+i used heroicons for my interface icons 
+npm i @heroicons/react
