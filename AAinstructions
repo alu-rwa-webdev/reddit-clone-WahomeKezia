@@ -56,3 +56,43 @@ also an issue with the tree
 
 i used heroicons for my interface icons 
 npm i @heroicons/react
+
+I faced this problem 
+PS C:\Users\Hp\Desktop\REDDIT-CLONE-ASSIGN\reddit-clone-WahomeKezia\client> npm i react-clickout-handler
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR!
+npm ERR! While resolving: client@0.1.0
+npm ERR! Found: react@18.1.0     
+npm ERR! node_modules/react      
+npm ERR!   react@"^18.1.0" from the root project
+npm ERR!
+npm ERR! Could not resolve dependency:
+npm ERR! peer react@"^15.5.x || ^16.x" from react-clickout-handler@1.2.1
+npm ERR! node_modules/react-clickout-handler
+npm ERR!   react-clickout-handler@"*" from the root project       
+npm ERR!
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR!
+npm ERR! See C:\Users\Hp\AppData\Local\npm-cache\eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\Hp\AppData\Local\npm-cache\_logs\2022-05-11T17_11_07_043Z-debug-0.log      
+my react-clickout-handler wasn't installing , 
+I typeed: npm config set legacy-peer-deps true 
+and the issues resolves 
+reference from stackoverflow: https://stackoverflow.com/questions/67645342/npm-install-fails-unable-to-resolve-dependency-tree
+
+for the log in and sign up , i set up my Api and run the following command
+cd api , npm init 
+npm i express, body-parser, cookie-parser ,cors , moongose ,dotenv 
+////yarn uses a different approach 
+then set up the package.json by adding type:module and "dev":server.js 
+then run npm run dev and nodemon start running , 
+you can use postman to test your API or open the port on the server 
+
+I create a database on MongoDB Atlas
+I have so  mant issues with MongoDB setup ...
+npmI have never seen so many bugs in  my life at once like I am now :(
