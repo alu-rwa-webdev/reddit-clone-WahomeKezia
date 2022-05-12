@@ -42,6 +42,7 @@ function AuthModal() {
 	  });
   }
 
+  
   return (
     <div className={"w-screen h-screen fixed top-0 left-0 z-30 flex "+visibleClass} style={{backgroundColor:'rgba(0,0,0,.6)'}}>
       <ClickOutHandler onClickOut={() => modalContext.setShow(false)}>

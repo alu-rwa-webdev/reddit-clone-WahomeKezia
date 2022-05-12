@@ -1,3 +1,7 @@
+/*this is the subheader of the page 
+it comes after the header and has the image */
+
+
 function BoardHeader() {
     return (
       <>
