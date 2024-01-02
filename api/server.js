@@ -26,12 +26,14 @@ function getUserFromToken(token) {
   return User.findById(userInfo.id);
 }
 
-await mongoose.connect('mongodb://localhost:27017/reddit', {useNewUrlParser:true,useUnifiedTopology:true,});
+await mongoose.connect('mongodb+srv://kwahome:kwahome14@redditclone.oena6ts.mongodb.net/', {useNewUrlParser:true,useUnifiedTopology:true,});
 const db = mongoose.connection;
 db.on('error', console.log);
 
+// mongodb://localhost:27017/reddit
+
 app.get('/', (req, res) => {
-  res.send('ok');
+  res.send('ok , working Nodejs and Expressjs backend');
 });
 
 app.post('/register', (req, res) => {
