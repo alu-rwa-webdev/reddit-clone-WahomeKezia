@@ -15,7 +15,7 @@ function Comment(props) {
   function refreshComments() {
     axios.get('http://localhost:4000/comments/root/'+props.id)
       .then(response => {
-        setComments(response.data); 
+        setComments(response.data);
       });
   }
 

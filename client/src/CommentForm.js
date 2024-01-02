@@ -9,7 +9,6 @@ function CommentForm (props) {
   const [commentBody,setCommentBody] = useState('');
   function postComment(e) {
     e.preventDefault();
-    
     const data = {body:commentBody, parentId:props.parentId,rootId:props.rootId,};
     axios.post('http://localhost:4000/comments', data, {withCredentials:true})
       .then(response => {
