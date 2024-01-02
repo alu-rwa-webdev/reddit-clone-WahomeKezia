@@ -26,13 +26,13 @@ function getUserFromToken(token) {
   return User.findById(userInfo.id);
 }
 
-// await mongoose.connect('mongodb://localhost:27017/reddit', {useNewUrlParser:true,useUnifiedTopology:true,});
-// const db = mongoose.connection;
-// db.on('error', console.log);
+await mongoose.connect('mongodb://localhost:27017/reddit', {useNewUrlParser:true,useUnifiedTopology:true,});
+const db = mongoose.connection;
+db.on('error', console.log);
 
-// app.get('/', (req, res) => {
-//   res.send('ok');
-// });
+app.get('/', (req, res) => {
+  res.send('ok');
+});
 
 app.post('/register', (req, res) => {
   const {email,username} = req.body;
@@ -137,7 +137,4 @@ app.post('/comments', (req, res) => {
     });
 });
 
-app.listen(4000 , () => {
-    console.log("Server is running at port 4000");
-  });
-
+app.listen(4000);
