@@ -1,6 +1,5 @@
 // swagger.js
-
-const swaggerJsdoc = require('swagger-jsdoc');
+import swaggerJsdoc from 'swagger-jsdoc';
 
 const options = {
   definition: {
@@ -11,9 +10,9 @@ const options = {
       description: 'API documentation for Reddit Clone',
     },
   },
-  apis: ['./VotingRoutes.js'], // Add your route file(s) here
+  apis: ['./VotingRoutes.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
 
-module.exports = swaggerSpec;
+export { swaggerSpec };

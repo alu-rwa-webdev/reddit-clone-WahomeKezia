@@ -9,9 +9,10 @@ import User from "./models/User.js";
 import Comment from "./models/Comment.js";
 import VotingRoutes from "./VotingRoutes.js";
 import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './swagger.js';
 
-// Use require for CommonJS modules
-const { swaggerSpec } = require('./swagger.cjs');
+// // Use require for CommonJS modules
+// const { swaggerSpec } = require('./swagger.js');
 
 const secret = 'secret123';
 const app = express();
@@ -36,7 +37,6 @@ db.on('error', console.log);
 
 // mongodb://localhost:27017/reddit
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-
 
 app.get('/', (req, res) => {
   res.send('ok , working Nodejs and Expressjs backend');
