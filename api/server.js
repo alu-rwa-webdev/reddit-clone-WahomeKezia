@@ -182,7 +182,8 @@ import VotingRoutes from "./VotingRoutes.js";
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './swagger.js';
 
-
+const path = require ('path')
+ 
 const secret = 'secret123';
 const app = express();
 app.use(cookieParser());
@@ -192,6 +193,16 @@ app.use(cors({
   origin: 'http://localhost:3000',
   credentials: true,
 }));
+
+// // adding production script for deployment 
+// app.use(express.static("./client/build"));
+// app.get("*",(req,res) => { 
+//   res.sendFile(path.resolve(__dirname , "client","build" , "index.html")) 
+// }) 
+
+// production scrpit on 
+// Serve static files from the "client/build" directory
+app.use(express.static(path.resolve(__dirname, 'client', 'build')));
 
 app.use(VotingRoutes);
 
@@ -206,6 +217,7 @@ db.on('error', console.log);
 
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // Run this to get the swagger.json 
 // app.get('/api-docs', (req, res) => {
 //   res.setHeader('Content-Type', 'application/json');
@@ -317,6 +329,14 @@ app.post('/comments', (req, res) => {
     .catch(() => {
       res.sendStatus(401);
     });
+// production script 2
+// Catch-all route to serve the React app
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
+
+});
+
+
 
 app.listen(4000);
