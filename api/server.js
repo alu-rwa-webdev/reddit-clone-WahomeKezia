@@ -182,8 +182,6 @@ import VotingRoutes from "./VotingRoutes.js";
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './swagger.js';
 
-// // Use require for CommonJS modules
-// const { swaggerSpec } = require('./swagger.js');
 
 const secret = 'secret123';
 const app = express();
@@ -206,8 +204,13 @@ await mongoose.connect('mongodb+srv://kwahome:kwahome14@redditclone.oena6ts.mong
 const db = mongoose.connection;
 db.on('error', console.log);
 
-// mongodb://localhost:27017/reddit
+
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+// Run this to get the swagger.json 
+// app.get('/api-docs', (req, res) => {
+//   res.setHeader('Content-Type', 'application/json');
+//   res.send(swaggerSpec);
+// });
 
 app.get('/', (req, res) => {
   res.send('ok , working Nodejs and Expressjs backend');
