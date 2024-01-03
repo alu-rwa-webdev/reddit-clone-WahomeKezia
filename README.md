@@ -12,6 +12,7 @@ The comment section and upvoting
 
 ![image](https://github.com/alu-rwa-webdev/reddit-clone-WahomeKezia/assets/90443938/3b0d0974-f81b-4833-bb5a-30466cff25c0)
 
+---
 
 ## Deployed Backend API 👨‍💻🙌
 ![image](https://github.com/alu-rwa-webdev/reddit-clone-WahomeKezia/assets/90443938/21951caa-f26d-44a4-acb0-a09e49c58adc)
