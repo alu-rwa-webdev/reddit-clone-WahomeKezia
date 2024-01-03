@@ -1,3 +1,61 @@
+// adding swagger annotations 
+
+/**
+ * @swagger
+ * /vote/{commentId}/{direction}:
+ *   get:
+ *     summary: Endpoint for voting on a comment
+ *     parameters:
+ *       - name: commentId
+ *         in: path
+ *         required: true
+ *         description: ID of the comment
+ *         schema:
+ *           type: string
+ *       - name: direction
+ *         in: path
+ *         required: true
+ *         description: Direction of the vote (up or down)
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example: true
+ */
+
+/**
+ * @swagger
+ * /votes:
+ *   post:
+ *     summary: Get vote information for multiple comments
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               commentsIds:
+ *                 type: array
+ *                 items:
+ *                   type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example:
+ *               commentsTotals:
+ *                 commentId1: 5
+ *                 commentId2: -2
+ *               userVotes:
+ *                 commentId1: 1
+ *                 commentId2: -1
+ */
+
+
 import express from 'express';
 import {getUserFromToken} from "./UserFunctions.js";
 import Vote from "./models/Vote.js";
