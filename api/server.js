@@ -1,3 +1,174 @@
+// server.js
+
+/**
+ * @swagger
+ * /register:
+ *   post:
+ *     summary: Register a new user
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       '201':
+ *         description: User registered successfully
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /user:
+ *   get:
+ *     summary: Get user information
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example:
+ *               username: exampleUser
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /login:
+ *   post:
+ *     summary: Log in user
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               username:
+ *                 type: string
+ *               password:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: User logged in successfully
+ *       '422':
+ *         description: Invalid username or password
+ */
+
+/**
+ * @swagger
+ * /logout:
+ *   post:
+ *     summary: Log out user
+ *     responses:
+ *       '200':
+ *         description: User logged out successfully
+ */
+
+/**
+ * @swagger
+ * /comments:
+ *   get:
+ *     summary: Get comments
+ *     parameters:
+ *       - name: search
+ *         in: query
+ *         required: false
+ *         description: Search term for comments
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example: [comment1, comment2]
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /comments/root/{rootId}:
+ *   get:
+ *     summary: Get root comments
+ *     parameters:
+ *       - name: rootId
+ *         in: path
+ *         required: true
+ *         description: ID of the root comment
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example: [comment1, comment2]
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /comments/{id}:
+ *   get:
+ *     summary: Get a comment by ID
+ *     parameters:
+ *       - name: id
+ *         in: path
+ *         required: true
+ *         description: ID of the comment
+ *         schema:
+ *           type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example: comment1
+ *       '500':
+ *         description: Internal server error
+ */
+
+/**
+ * @swagger
+ * /comments:
+ *   post:
+ *     summary: Create a new comment
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               title:
+ *                 type: string
+ *               body:
+ *                 type: string
+ *               parentId:
+ *                 type: string
+ *               rootId:
+ *                 type: string
+ *     responses:
+ *       '200':
+ *         description: Success
+ *         content:
+ *           application/json:
+ *             example: newComment
+ *       '401':
+ *         description: Unauthorized
+ *       '500':
+ *         description: Internal server error
+ */
+
 import express from 'express';
 import bodyParser from "body-parser";
 import cookieParser from 'cookie-parser';
