@@ -13,5 +13,9 @@ The comment section and upvoting
 ![image](https://github.com/alu-rwa-webdev/reddit-clone-WahomeKezia/assets/90443938/3b0d0974-f81b-4833-bb5a-30466cff25c0)
 
 
-Deployed:
+## Deployed Backend API 
+![ApiBalmerGIF](https://github.com/alu-rwa-webdev/reddit-clone-WahomeKezia/assets/90443938/1211c07d-1625-44e5-93c2-a4d90228d806)
+
+
+Documented API on SwaggerHub available to the public : https://app.swaggerhub.com/apis-docs/keziawaho/reddit-clone_api/1.0.0 
 
