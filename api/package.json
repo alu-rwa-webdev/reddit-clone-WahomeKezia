@@ -11,5 +11,9 @@
     "mongoose": "^5.12.12",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0"
+  },
+  "scripts": {
+    "generate-swagger": "node --loader ts-node/esm --experimental-specifier-resolution=node swagger.js -o swagger.json"
   }
+
 }
