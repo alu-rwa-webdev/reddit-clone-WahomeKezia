@@ -14,6 +14,7 @@
   },
   "scripts": {
     "generate-swagger": "swagger-jsdoc -d swagger.js -o swagger.json"
+    
   },
   "devDependencies": {}
 }

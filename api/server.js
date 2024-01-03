@@ -181,8 +181,8 @@ import Comment from "./models/Comment.js";
 import VotingRoutes from "./VotingRoutes.js";
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './swagger.js';
+import path from 'path';
 
-const path = require ('path')
  
 const secret = 'secret123';
 const app = express();
@@ -194,15 +194,15 @@ app.use(cors({
   credentials: true,
 }));
 
-// // adding production script for deployment 
-// app.use(express.static("./client/build"));
-// app.get("*",(req,res) => { 
-//   res.sendFile(path.resolve(__dirname , "client","build" , "index.html")) 
-// }) 
 
-// production scrpit on 
-// Serve static files from the "client/build" directory
-app.use(express.static(path.resolve(__dirname, 'client', 'build')));
+
+// production scrpit one 
+// For serving static files from the 'client/build' directory
+const currentModuleURL = new URL(import.meta.url);
+const currentModuleDir = path.dirname(currentModuleURL.pathname);
+
+app.use(express.static(path.resolve(currentModuleDir, 'client', 'build')));
+
 
 app.use(VotingRoutes);
 
