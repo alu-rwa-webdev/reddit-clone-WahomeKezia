@@ -10,7 +10,8 @@ const options = {
       description: 'API documentation for Reddit Clone',
     },
   },
-  apis: ['./VotingRoutes.js'],
+   // Include all relevant route files
+   apis: ['./VotingRoutes.js', './server.js'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
