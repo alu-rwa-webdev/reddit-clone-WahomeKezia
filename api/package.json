@@ -13,7 +13,8 @@
     "swagger-ui-express": "^5.0.0"
   },
   "scripts": {
-    "generate-swagger": "swagger-jsdoc -d swagger.js -o swagger.json"
+    "generate-swagger": "swagger-jsdoc -d swagger.js -o swagger.json",
+    "start": "node server.js"
     
   },
   "devDependencies": {}
