@@ -1,2 +1,2 @@
-web: yarn start
+web: cd api && yarn start
 
