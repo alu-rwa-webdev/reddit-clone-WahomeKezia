@@ -182,8 +182,11 @@ import VotingRoutes from "./VotingRoutes.js";
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './swagger.js';
 import path from 'path';
+import dotenv from 'dotenv'; // Import dotenv
 
-const PORT = process.env.PORT || 4000;
+
+dotenv.config(); // Load environment variables from .env file
+const PORT = process.env.PORT 
  
 const secret = 'secret123';
 const app = express();
@@ -331,24 +334,27 @@ app.post('/comments', (req, res) => {
       res.sendStatus(401);
     });
 // production script 2
-// Catch-all route to serve the React app
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
-// -------------deployment to heroku---------------
-__dirname = path.resolve();
-if (process.env.NODE_ENV ==="production") {
+// // Catch-all route to serve the React app
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+// });
+
+// --------------------------deployment------------------------------
+const __dirname = path.resolve();
+
+if (process.env.NODE_ENV =="production") {
   app.use(express.static(path.join(__dirname, "/client/build")));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
-  
-}else{
-  app.get("/",(req,res) => {
-    res.send("API is running...");
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running..");
   });
 }
+// --------------------------deployment------------------------------
+
 
 });
 
