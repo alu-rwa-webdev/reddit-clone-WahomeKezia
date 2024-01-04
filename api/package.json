@@ -14,8 +14,11 @@
   },
   "scripts": {
     "generate-swagger": "swagger-jsdoc -d swagger.js -o swagger.json",
-    "start": "node server.js"
-    
+    "start": "node server.js" 
   },
+  "engines": {
+    "node": "v16.14.1"
+  },
+  
   "devDependencies": {}
 }
